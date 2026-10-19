@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "name": "sobre_auditoria",
+  "displayName": "10 - Sobre o Projeto & Auditoria",
+  "displayOption": "FitToPage",
+  "width": 1280,
+  "height": 720,
+  "visuals": [
+    {
+      "id": "card_conformidade",
+      "type": "card",
+      "measure": "[Status Conformidade Técnica]",
+      "position": {
+        "x": 20,
+        "y": 20,
+        "width": 600,
+        "height": 100
+      }
+    },
+    {
+      "id": "card_cobertura",
+      "type": "card",
+      "measure": "[% Cobertura Documental]",
+      "position": {
+        "x": 640,
+        "y": 20,
+        "width": 620,
+        "height": 100
+      }
+    },
+    {
+      "id": "textbox_manifesto",
+      "type": "textbox",
+      "title": "ELETRODEX — O Universo dos Equipamentos Elétricos. Desenvolvido para conectar engenharia de potência, governança de dados e experiência digital premium.",
+      "position": {
+        "x": 20,
+        "y": 140,
+        "width": 1240,
+        "height": 180
+      }
+    },
+    {
+      "id": "table_auditoria_stats",
+      "type": "tableEx",
+      "columns": [
+        "DimCategorias[Nome]",
+        "DimCategorias[Descricao]"
+      ],
+      "position": {
+        "x": 20,
+        "y": 340,
+        "width": 1240,
+        "height": 340
+      }
+    }
+  ]
+}

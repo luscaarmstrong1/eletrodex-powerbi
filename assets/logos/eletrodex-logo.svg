@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-circuit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B8FF"/>
+      <stop offset="50%" stop-color="#38E8FF"/>
+      <stop offset="100%" stop-color="#28E6A0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="100%" height="100%" rx="16" fill="#080F1C"/>
+
+  <!-- Logo Icon: Hexagon Power Node -->
+  <g transform="translate(60, 40)">
+    <!-- Hexagon Outer -->
+    <polygon points="80,10 150,50 150,130 80,170 10,130 10,50" 
+             fill="#111C2E" stroke="url(#grad-circuit)" stroke-width="4" filter="url(#glow)"/>
+    <!-- Circuit Lines -->
+    <path d="M 40,50 L 60,70 L 60,110 L 40,130" fill="none" stroke="#00B8FF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 120,50 L 100,70 L 100,110 L 120,130" fill="none" stroke="#28E6A0" stroke-width="3" stroke-linecap="round"/>
+    <!-- High Voltage Lightning Bolt -->
+    <path d="M 85,30 L 55,95 L 82,95 L 70,150 L 105,80 L 80,80 Z" fill="url(#grad-circuit)" filter="url(#glow)"/>
+  </g>
+
+  <!-- Main Brand Text -->
+  <text x="240" y="115" font-family="'Segoe UI', 'Inter', -apple-system, sans-serif" font-weight="900" font-size="64" fill="#F4F8FF" letter-spacing="4">
+    ELETRO<tspan fill="url(#grad-circuit)">DEX</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="245" y="155" font-family="'Segoe UI', 'Inter', sans-serif" font-weight="500" font-size="16" fill="#9FB2CA" letter-spacing="2">
+    O UNIVERSO DOS EQUIPAMENTOS ELÉTRICOS
+  </text>
+
+  <!-- Status / Version Pill -->
+  <g transform="translate(245, 175)">
+    <rect width="145" height="24" rx="6" fill="#17263B" stroke="#00B8FF" stroke-width="1"/>
+    <circle cx="12" cy="12" r="4" fill="#28E6A0"/>
+    <text x="24" y="16" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="11" fill="#38E8FF">
+      v1.0 • TMDL + PBIR
+    </text>
+  </g>
+</svg>

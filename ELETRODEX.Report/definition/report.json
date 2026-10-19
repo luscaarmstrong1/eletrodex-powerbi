@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Eletrodex Dark Tech",
+      "version": "1.0",
+      "type": "Custom"
+    }
+  },
+  "layoutOptimization": 0,
+  "pages": [
+    "pages/central_eletrodex",
+    "pages/catalogo_eletrodex",
+    "pages/ficha_tecnica",
+    "pages/comparador",
+    "pages/analise_desempenho",
+    "pages/seletor_inteligente",
+    "pages/solar_automacao",
+    "pages/colecoes_conquistas",
+    "pages/biblioteca_tecnica",
+    "pages/sobre_auditoria"
+  ]
+}

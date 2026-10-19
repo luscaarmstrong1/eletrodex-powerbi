@@ -1,0 +1,64 @@
+table DimParametros
+	lineageTag: par-001
+
+	column ParametroID
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: par-col-id
+		summarizeBy: none
+		sourceColumn: ParametroID
+
+	column Nome
+		dataType: string
+		lineageTag: par-col-nome
+		summarizeBy: none
+		sortByColumn: OrdemExibicao
+		sourceColumn: Nome
+
+	column Grupo
+		dataType: string
+		lineageTag: par-col-grp
+		summarizeBy: none
+		sourceColumn: Grupo
+
+	column TipoDado
+		dataType: string
+		lineageTag: par-col-tp
+		summarizeBy: none
+		sourceColumn: TipoDado
+
+	column UnidadeCanonica
+		dataType: string
+		lineageTag: par-col-un
+		summarizeBy: none
+		sourceColumn: UnidadeCanonica
+
+	column CategoriaAplicavel
+		dataType: string
+		lineageTag: par-col-cat
+		summarizeBy: none
+		sourceColumn: CategoriaAplicavel
+
+	column RegraComparacao
+		dataType: string
+		lineageTag: par-col-reg
+		summarizeBy: none
+		sourceColumn: RegraComparacao
+
+	column OrdemExibicao
+		dataType: int64
+		formatString: 0
+		lineageTag: par-col-ord
+		summarizeBy: none
+		sourceColumn: OrdemExibicao
+
+	partition DimParametros = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "parametros.csv"),[Delimiter=";", Columns=8, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"ParametroID", Int64.Type}, {"Nome", type text}, {"Grupo", type text}, {"TipoDado", type text}, {"UnidadeCanonica", type text}, {"CategoriaAplicavel", type text}, {"RegraComparacao", type text}, {"OrdemExibicao", Int64.Type}})
+			in
+				Tipos

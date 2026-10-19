@@ -1,0 +1,39 @@
+table PonteEquipamentoRecurso
+	lineageTag: ponte-rec-001
+
+	column EquipamentoID
+		dataType: int64
+		formatString: 0
+		lineageTag: ponte-rec-col-eq
+		summarizeBy: none
+		sourceColumn: EquipamentoID
+
+	column RecursoID
+		dataType: int64
+		formatString: 0
+		lineageTag: ponte-rec-col-rec
+		summarizeBy: none
+		sourceColumn: RecursoID
+
+	column EstadoVerificacao
+		dataType: string
+		lineageTag: ponte-rec-col-est
+		summarizeBy: none
+		sourceColumn: EstadoVerificacao
+
+	column FonteID
+		dataType: int64
+		formatString: 0
+		lineageTag: ponte-rec-col-fon
+		summarizeBy: none
+		sourceColumn: FonteID
+
+	partition PonteEquipamentoRecurso = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "ponte_equipamento_recurso.csv"),[Delimiter=";", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"EquipamentoID", Int64.Type}, {"RecursoID", Int64.Type}, {"EstadoVerificacao", type text}, {"FonteID", Int64.Type}})
+			in
+				Tipos

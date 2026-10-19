@@ -1,0 +1,38 @@
+﻿FonteID;Fabricante;NomeDocumento;TipoDocumento;URL;Revisao;DataConsulta;DataPublicacao;StatusLink
+1;Huawei;Datasheet SUN2000-10KTL-M1 High Current;Datasheet;https://solar.huawei.com/download?p=%2F-%2Fmedia%2FSolar%2Fattachment%2Fpdf%2Feu%2Fdatasheet%2FSUN2000-3-10KTL-M1.pdf;04/2023;2026-10-19;2023-04-01;Verificado Oficial
+2;Huawei;Datasheet SUN2000-50KTL-M3;Datasheet;https://solar.huawei.com/download?p=%2F-%2Fmedia%2FSolar%2Fattachment%2Fpdf%2Feu%2Fdatasheet%2FSUN2000-50KTL-M3.pdf;02/2023;2026-10-19;2023-02-15;Verificado Oficial
+3;Sungrow;Datasheet SG10RT Multi-MPPT String Inverter;Datasheet;https://portuguese.sungrowpower.com/productDetail/1344;Rev 1.3;2026-10-19;2022-11-10;Verificado Oficial
+4;Sungrow;Datasheet SG125HX Commercial PV Inverter;Datasheet;https://en.sungrowpower.com/productDetail/1183;Rev 2.0;2026-10-19;2023-01-20;Verificado Oficial
+5;Growatt;Datasheet MIN 5000TL-X;Datasheet;https://www.growatt.com/show-40-547.html;2022.08;2026-10-19;2022-08-05;Verificado Oficial
+6;Growatt;Datasheet MID 20KTL3-X;Datasheet;https://www.growatt.com/show-40-588.html;2023.01;2026-10-19;2023-01-12;Verificado Oficial
+7;Fronius;Datasheet Fronius Primo 5.0-1 208-240;Datasheet;https://www.fronius.com/en/solar-energy/installers-partners/technical-data/all-products/inverters/fronius-primo/fronius-primo-5-0-1-208-240;2022-05;2026-10-19;2022-05-18;Verificado Oficial
+8;Fronius;Datasheet Fronius Symo Advanced 15.0-3-M;Datasheet;https://www.fronius.com/en/solar-energy/installers-partners/technical-data/all-products/inverters/fronius-symo-advanced/fronius-symo-advanced-15-0-3-m;2023-06;2026-10-19;2023-06-01;Verificado Oficial
+9;Solis;Datasheet Solis-3P10K-4G;Datasheet;https://www.solisinverters.com/br/threephaseinverters2/3p10k_4g-br.html;V1.2;2026-10-19;2022-09-14;Verificado Oficial
+10;Enphase;Datasheet IQ8M Microinverter;Datasheet;https://enphase.com/download/iq8m-iq8a-microinverter-data-sheet;IQ8-DS-0002-01-EN-US;2026-10-19;2023-03-25;Verificado Oficial
+11;Hoymiles;Datasheet HMS-2000-4T Microinverter;Datasheet;https://www.hoymiles.com/product/microinverter/hms-1600-1800-2000-4t/;V1.3;2026-10-19;2023-04-10;Verificado Oficial
+12;Hoymiles;Datasheet HMT-2250-6T Trifásico Microinverter;Datasheet;https://www.hoymiles.com/product/microinverter/hmt-1800-2250-6t/;V1.1;2026-10-19;2023-05-15;Verificado Oficial
+13;WEG;Catálogo Transformadores a Óleo Trifásicos de Distribuição;Catálogo Técnico;https://www.weg.net/catalog/weg/BR/pt/Transformadores/Transformadores-de-Distribuicao-a-Oleo/p/MKT_WDC_GLOBAL_TRANSFORMERS_OIL_DISTRIBUTION;Rev 12;2026-10-19;2022-10-01;Verificado Oficial
+14;WEG;Catálogo Transformadores a Seco Encapsulado em Resina Epóxi;Catálogo Técnico;https://www.weg.net/catalog/weg/BR/pt/Transformadores/Transformadores-a-Seco/p/MKT_WDC_GLOBAL_TRANSFORMERS_DRY_CAST_RESIN;Rev 08;2026-10-19;2023-02-11;Verificado Oficial
+15;Siemens;Siemens GEAFOL Cast-resin Transformers Datasheet;Datasheet;https://www.siemens-energy.com/global/en/offerings/power-transmission/portfolio/transformers/distribution-transformers/geafol-cast-resin-transformers.html;SE-DS-2022;2026-10-19;2022-07-20;Verificado Oficial
+16;ABB;ABB Distribution Transformers Liquid-Filled Catalog;Catálogo Técnico;https://search.abb.com/library/Download.aspx?DocumentID=1ZBF000001R0001&LanguageCode=en&DocumentPartId=&Action=Launch;Rev D;2026-10-19;2022-04-12;Verificado Oficial
+17;Schneider Electric;Datasheet Compact NSX100F TMD 100A 3P3D;Datasheet;https://www.se.com/br/pt/product/LV429630/circuit-breaker-compact-nsx100f-36-ka-at-415-vac-tmd-trip-unit-100-a-3-poles-3d/;2023-V4;2026-10-19;2023-08-01;Verificado Oficial
+18;Schneider Electric;Datasheet Masterpact MTZ2 16 H1 Micrologic 2.0X;Datasheet;https://www.se.com/br/pt/product-range/62262-masterpact-mtz/;2023-V2;2026-10-19;2023-05-10;Verificado Oficial
+19;ABB;Datasheet ABB SACE Tmax XT4N 250 Ekip Dip LS/I;Datasheet;https://new.abb.com/products/1SDA100194R1/xt4n-250-ekip-dip-ls-i-in-250a-3p-f-f;1SDA100194R1;2026-10-19;2022-12-05;Verificado Oficial
+20;WEG;Datasheet Disjuntor em Caixa Moldada DWB250H;Datasheet;https://www.weg.net/catalog/weg/BR/pt/Painéis-e-Comandos/Disjuntores-em-Caixa-Moldada/DWB250H/p/11894451;Rev 05;2026-10-19;2023-01-30;Verificado Oficial
+21;Siemens;Datasheet 3VA2 Molded Case Circuit Breaker 160A ETU320;Datasheet;https://mall.industry.siemens.com/mall/pt/br/Catalog/Product/3VA2116-5HN32-0AA0;A5E03456789;2026-10-19;2023-03-12;Verificado Oficial
+22;SEL (Schweitzer);SEL-751 Feeder Protection Relay Flyer & Manual;Manual Técnico;https://selinc.com/products/751/;20230615;2026-10-19;2023-06-15;Verificado Oficial
+23;SEL (Schweitzer);SEL-787 Transformer Protection Relay Specifications;Datasheet;https://selinc.com/products/787/;20221130;2026-10-19;2022-11-30;Verificado Oficial
+24;Schneider Electric;Easergy P3 Feeder and Motor Protection Relay Brochure;Catálogo Técnico;https://www.se.com/br/pt/product-range/64292-easergy-p3/;DIA6ED2170301EN;2026-10-19;2022-09-01;Verificado Oficial
+25;Siemens;SIPROTEC Compact 7SJ80 Overcurrent Protection Manual;Manual Técnico;https://support.industry.siemens.com/cs/document/109747970/siprotec-compact-7sj80-manual?dti=0&lc=en-WW;C53000-G1140-C343-2;2026-10-19;2022-04-18;Verificado Oficial
+26;Huawei;SmartLogger 3000A User Manual & Datasheet;Manual Técnico;https://solar.huawei.com/download?p=%2F-%2Fmedia%2FSolar%2Fattachment%2Fpdf%2Feu%2Fdatasheet%2FSmartLogger3000A.pdf;Issue 10;2026-10-19;2023-07-20;Verificado Oficial
+27;Huawei;Smart Power Sensor DTSU666-H Datasheet;Datasheet;https://solar.huawei.com/download?p=%2F-%2Fmedia%2FSolar%2Fattachment%2Fpdf%2Feu%2Fdatasheet%2FDTSU666-H.pdf;Issue 03;2026-10-19;2022-08-11;Verificado Oficial
+28;Schneider Electric;PowerLogic PM5300 Power and Energy Meter Datasheet;Datasheet;https://www.se.com/br/pt/product/METSEPM5350/powerlogic-pm5350-power-meter/;PLSED309033EN;2026-10-19;2022-10-25;Verificado Oficial
+29;Carlo Gavazzi;EM24 DIN AV2 3X IS X Energy Meter Datasheet;Datasheet;https://www.gavazziautomation.com/images/PIM/DATASHEET/ENG/EM24_DS.pdf;EM24DS250522;2026-10-19;2022-05-25;Verificado Oficial
+30;WEG;Inversor de Frequência CFW11 Manual do Usuário;Manual Técnico;https://www.weg.net/catalog/weg/BR/pt/Drives/Inversores-de-Frequência/Inversores-de-Frequência-Gerais/CFW11/p/MKT_WDC_GLOBAL_DRIVES_CFW11;Rev 10;2026-10-19;2023-04-05;Verificado Oficial
+31;WEG;Inversor de Frequência CFW500 Guia Rápido;Datasheet;https://www.weg.net/catalog/weg/BR/pt/Drives/Inversores-de-Frequência/CFW500/p/MKT_WDC_GLOBAL_DRIVES_CFW500;Rev 08;2026-10-19;2023-01-18;Verificado Oficial
+32;ABB;ACS580 Standard Drive Hardware Manual;Manual Técnico;https://new.abb.com/drives/low-voltage-ac/general-purpose/acs580;3AXD50000018826 Rev H;2026-10-19;2022-11-01;Verificado Oficial
+33;Danfoss;VLT AutomationDrive FC 302 Operating Guide;Manual Técnico;https://www.danfoss.com/en/products/dds/low-voltage-drives/vlt-drives/vlt-automationdrive-fc-302/;MG33AQ02;2026-10-19;2023-02-14;Verificado Oficial
+34;CLAMPER;Datasheet CLAMPER Solar SB 1000V 40kA;Datasheet;https://www.clamper.com.br/produto/clamper-solar/;Rev 06;2026-10-19;2023-03-10;Verificado Oficial
+35;CLAMPER;Datasheet VCL Slim 275V 45kA Classe II;Datasheet;https://www.clamper.com.br/produto/vcl-slim-45ka/;Rev 09;2026-10-19;2022-12-20;Verificado Oficial
+36;DEHN;DEHNcombo YPV SCI 1000 Type 1 and 2 Surge Arrester Datasheet;Datasheet;https://www.dehn-international.com/en/products/surge-protection-photovoltaics/dehncombo-ypv-sci;DS-900060;2026-10-19;2023-05-18;Verificado Oficial
+37;DEHN;DEHNguard M TNS 275 Type 2 Surge Arrester Datasheet;Datasheet;https://www.dehn-international.com/en/products/surge-protection-power-supply/dehnguard-modular;DS-952400;2026-10-19;2022-08-30;Verificado Oficial

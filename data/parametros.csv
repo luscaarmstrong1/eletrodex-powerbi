@@ -1,0 +1,15 @@
+﻿ParametroID;Nome;Grupo;TipoDado;UnidadeCanonica;CategoriaAplicavel;RegraComparacao;OrdemExibicao
+1;Potência Nominal CA;Elétrico CA;Decimal;kW;Inversores Fotovoltaicos, Microinversores, Inversores de Frequência, Transformadores;Maior é melhor;1
+2;Tensão Máxima CC;Elétrico CC;Decimal;V;Inversores Fotovoltaicos, Microinversores;Maior é melhor;2
+3;Eficiência Máxima;Desempenho;Decimal;%;Inversores Fotovoltaicos, Microinversores, Inversores de Frequência;Maior é melhor;3
+4;Quantidade de MPPTs;Recursos;Inteiro;un;Inversores Fotovoltaicos, Microinversores;Maior é melhor;4
+5;Grau de Proteção (IP);Físico;Texto;IP;Todos;Neutro;5
+6;Corrente Nominal;Elétrico CA;Decimal;A;Disjuntores, DPS, Inversores de Frequência;Conforme projeto;6
+7;Capacidade de Ruptura (Icu);Proteção;Decimal;kA;Disjuntores;Maior é melhor;7
+8;Tensão Primária;Elétrico CA;Decimal;kV;Transformadores;Conforme projeto;8
+9;Tensão Secundária;Elétrico CA;Decimal;V;Transformadores;Conforme projeto;9
+10;Funções ANSI Suportadas;Proteção;Texto;códigos;Relés de Proteção;Maior quantidade;10
+11;Interface de Comunicação;Comunicação;Texto;tipo;Todos;Neutro;11
+12;Corrente Máxima de Descarga (Imax);Proteção;Decimal;kA;Dispositivos de Proteção contra Surtos (DPS);Maior é melhor;12
+13;Tipo de Resfriamento;Físico;Texto;tipo;Transformadores, Inversores Fotovoltaicos;Neutro;13
+14;Número de Fases;Elétrico CA;Texto;tipo;Inversores Fotovoltaicos, Microinversores, Transformadores, Inversores de Frequência;Neutro;14

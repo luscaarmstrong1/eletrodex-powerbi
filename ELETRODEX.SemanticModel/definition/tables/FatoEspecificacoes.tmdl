@@ -1,0 +1,75 @@
+table FatoEspecificacoes
+	lineageTag: fat-esp-001
+
+	column EquipamentoID
+		dataType: int64
+		formatString: 0
+		lineageTag: fat-col-eqid
+		summarizeBy: none
+		sourceColumn: EquipamentoID
+
+	column ParametroID
+		dataType: int64
+		formatString: 0
+		lineageTag: fat-col-parid
+		summarizeBy: none
+		sourceColumn: ParametroID
+
+	column ValorNumerico
+		dataType: double
+		lineageTag: fat-col-vnum
+		summarizeBy: sum
+		sourceColumn: ValorNumerico
+
+	column ValorTexto
+		dataType: string
+		lineageTag: fat-col-vtxt
+		summarizeBy: none
+		sourceColumn: ValorTexto
+
+	column UnidadeOriginal
+		dataType: string
+		lineageTag: fat-col-un
+		summarizeBy: none
+		sourceColumn: UnidadeOriginal
+
+	column ValorNormalizado
+		dataType: double
+		lineageTag: fat-col-vnorm
+		summarizeBy: sum
+		sourceColumn: ValorNormalizado
+
+	column CondicaoEnsaio
+		dataType: string
+		lineageTag: fat-col-cond
+		summarizeBy: none
+		sourceColumn: CondicaoEnsaio
+
+	column FonteID
+		dataType: int64
+		formatString: 0
+		lineageTag: fat-col-fonid
+		summarizeBy: none
+		sourceColumn: FonteID
+
+	column PaginaFonte
+		dataType: string
+		lineageTag: fat-col-pag
+		summarizeBy: none
+		sourceColumn: PaginaFonte
+
+	column StatusVerificacao
+		dataType: string
+		lineageTag: fat-col-stv
+		summarizeBy: none
+		sourceColumn: StatusVerificacao
+
+	partition FatoEspecificacoes = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "especificacoes.csv"),[Delimiter=";", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"EquipamentoID", Int64.Type}, {"ParametroID", Int64.Type}, {"ValorNumerico", type number}, {"ValorTexto", type text}, {"UnidadeOriginal", type text}, {"ValorNormalizado", type number}, {"CondicaoEnsaio", type text}, {"FonteID", Int64.Type}, {"PaginaFonte", type text}, {"StatusVerificacao", type text}})
+			in
+				Tipos

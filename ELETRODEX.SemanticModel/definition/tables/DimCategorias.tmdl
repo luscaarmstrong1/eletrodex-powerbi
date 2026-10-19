@@ -1,0 +1,52 @@
+table DimCategorias
+	lineageTag: cat-001
+
+	column CategoriaID
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: cat-col-id
+		summarizeBy: none
+		sourceColumn: CategoriaID
+
+	column Nome
+		dataType: string
+		lineageTag: cat-col-nome
+		summarizeBy: none
+		sortByColumn: OrdemExibicao
+		sourceColumn: Nome
+
+	column Descricao
+		dataType: string
+		lineageTag: cat-col-desc
+		summarizeBy: none
+		sourceColumn: Descricao
+
+	column Cor
+		dataType: string
+		lineageTag: cat-col-cor
+		summarizeBy: none
+		sourceColumn: Cor
+
+	column Icone
+		dataType: string
+		lineageTag: cat-col-ico
+		summarizeBy: none
+		sourceColumn: Icone
+
+	column OrdemExibicao
+		dataType: int64
+		formatString: 0
+		lineageTag: cat-col-ord
+		summarizeBy: none
+		sourceColumn: OrdemExibicao
+
+	partition DimCategorias = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "categorias.csv"),[Delimiter=";", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"CategoriaID", Int64.Type}, {"Nome", type text}, {"Descricao", type text}, {"Cor", type text}, {"Icone", type text}, {"OrdemExibicao", Int64.Type}})
+			in
+				Tipos

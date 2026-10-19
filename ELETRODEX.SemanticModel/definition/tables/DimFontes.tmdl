@@ -1,0 +1,71 @@
+table DimFontes
+	lineageTag: fon-001
+
+	column FonteID
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: fon-col-id
+		summarizeBy: none
+		sourceColumn: FonteID
+
+	column Fabricante
+		dataType: string
+		lineageTag: fon-col-fab
+		summarizeBy: none
+		sourceColumn: Fabricante
+
+	column NomeDocumento
+		dataType: string
+		lineageTag: fon-col-doc
+		summarizeBy: none
+		sourceColumn: NomeDocumento
+
+	column TipoDocumento
+		dataType: string
+		lineageTag: fon-col-tp
+		summarizeBy: none
+		sourceColumn: TipoDocumento
+
+	column URL
+		dataType: string
+		dataCategory: WebURL
+		lineageTag: fon-col-url
+		summarizeBy: none
+		sourceColumn: URL
+
+	column Revisao
+		dataType: string
+		lineageTag: fon-col-rev
+		summarizeBy: none
+		sourceColumn: Revisao
+
+	column DataConsulta
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: fon-col-dtc
+		summarizeBy: none
+		sourceColumn: DataConsulta
+
+	column DataPublicacao
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: fon-col-dtp
+		summarizeBy: none
+		sourceColumn: DataPublicacao
+
+	column StatusLink
+		dataType: string
+		lineageTag: fon-col-stl
+		summarizeBy: none
+		sourceColumn: StatusLink
+
+	partition DimFontes = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "fontes.csv"),[Delimiter=";", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"FonteID", Int64.Type}, {"Fabricante", type text}, {"NomeDocumento", type text}, {"TipoDocumento", type text}, {"URL", type text}, {"Revisao", type text}, {"DataConsulta", type date}, {"DataPublicacao", type date}, {"StatusLink", type text}})
+			in
+				Tipos

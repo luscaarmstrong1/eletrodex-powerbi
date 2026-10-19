@@ -1,0 +1,2 @@
+/// Caminho relativo ou absoluto da pasta data contendo os arquivos CSV
+shared CaminhoDados = "C:/Users/lucas/.gemini/antigravity/scratch/eletrodex-powerbi/data/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true];

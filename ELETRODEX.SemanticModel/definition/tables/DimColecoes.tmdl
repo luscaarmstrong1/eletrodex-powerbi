@@ -1,0 +1,51 @@
+table DimColecoes
+	lineageTag: col-001
+
+	column ColecaoID
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: col-col-id
+		summarizeBy: none
+		sourceColumn: ColecaoID
+
+	column Nome
+		dataType: string
+		lineageTag: col-col-nom
+		summarizeBy: none
+		sourceColumn: Nome
+
+	column Descricao
+		dataType: string
+		lineageTag: col-col-des
+		summarizeBy: none
+		sourceColumn: Descricao
+
+	column Icone
+		dataType: string
+		lineageTag: col-col-ico
+		summarizeBy: none
+		sourceColumn: Icone
+
+	column Cor
+		dataType: string
+		lineageTag: col-col-cor
+		summarizeBy: none
+		sourceColumn: Cor
+
+	column MetaEquipamentos
+		dataType: int64
+		formatString: 0
+		lineageTag: col-col-meta
+		summarizeBy: sum
+		sourceColumn: MetaEquipamentos
+
+	partition DimColecoes = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "colecoes.csv"),[Delimiter=";", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"ColecaoID", Int64.Type}, {"Nome", type text}, {"Descricao", type text}, {"Icone", type text}, {"Cor", type text}, {"MetaEquipamentos", Int64.Type}})
+			in
+				Tipos

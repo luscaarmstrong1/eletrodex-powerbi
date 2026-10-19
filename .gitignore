@@ -1,0 +1,23 @@
+# Power BI
+*.tmp
+*.temp
+*AutoRecovery*
+*.pbit.tmp
+*.pbix.tmp
+SecurityBindings
+[SecurityBindings]
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

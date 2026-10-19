@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "name": "solar_automacao",
+  "displayName": "07 - Solar & Automação Avançada",
+  "displayOption": "FitToPage",
+  "width": 1280,
+  "height": 720,
+  "visuals": [
+    {
+      "id": "text_cenario_didatico",
+      "type": "textbox",
+      "title": "Cenários Didáticos de Engenharia: Usina Solar 10 kW com Injeção Máxima de 8 kW e Monitoramento Smart Meter",
+      "position": {
+        "x": 20,
+        "y": 20,
+        "width": 1240,
+        "height": 80
+      }
+    },
+    {
+      "id": "table_equipamentos_injecao_zero",
+      "type": "tableEx",
+      "columns": [
+        "DimFabricantes[Nome]",
+        "DimEquipamentos[Modelo]",
+        "DimCategorias[Nome]",
+        "DimEquipamentos[Descricao]"
+      ],
+      "position": {
+        "x": 20,
+        "y": 120,
+        "width": 600,
+        "height": 560
+      }
+    },
+    {
+      "id": "matrix_arquitetura_fluxo",
+      "type": "tableEx",
+      "columns": [
+        "DimRecursos[Nome]",
+        "DimRecursos[Descricao]"
+      ],
+      "position": {
+        "x": 640,
+        "y": 120,
+        "width": 620,
+        "height": 560
+      }
+    }
+  ]
+}

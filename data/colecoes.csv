@@ -1,0 +1,6 @@
+﻿ColecaoID;Nome;Descricao;Icone;Cor;MetaEquipamentos
+1;Mestres da Energia Solar;Conquiste o domínio da conversão fotovoltaica e tecnologias MPPT de ponta.;SunIcon;#00B8FF;15
+2;Guardiões da Proteção;Disjuntores potentes, relés inteligentes e sistemas de blindagem contra surtos.;ShieldIcon;#FF5C5C;17
+3;Gigantes da Transformação;Transformadores imersos em óleo e a seco encapsulados em resina epóxi.;ZapIcon;#FFC857;6
+4;Inteligência Industrial & Drives;Inversores de frequência avançados com controle vetorial de alto rendimento.;CpuIcon;#6366F1;6
+5;Controle e Injeção Zero;Medidores bidirecionais e orquestradores de fluxo para redes inteligentes.;GaugeIcon;#28E6A0;5

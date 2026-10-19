@@ -1,0 +1,46 @@
+table DimFabricantes
+	lineageTag: fab-001
+
+	column FabricanteID
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: fab-col-id
+		summarizeBy: none
+		sourceColumn: FabricanteID
+
+	column Nome
+		dataType: string
+		lineageTag: fab-col-nome
+		summarizeBy: none
+		sourceColumn: Nome
+
+	column Pais
+		dataType: string
+		lineageTag: fab-col-pais
+		summarizeBy: none
+		sourceColumn: Pais
+
+	column SiteOficial
+		dataType: string
+		dataCategory: WebURL
+		lineageTag: fab-col-site
+		summarizeBy: none
+		sourceColumn: SiteOficial
+
+	column LogoURL
+		dataType: string
+		dataCategory: ImageURL
+		lineageTag: fab-col-logo
+		summarizeBy: none
+		sourceColumn: LogoURL
+
+	partition DimFabricantes = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "fabricantes.csv"),[Delimiter=";", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"FabricanteID", Int64.Type}, {"Nome", type text}, {"Pais", type text}, {"SiteOficial", type text}, {"LogoURL", type text}})
+			in
+				Tipos

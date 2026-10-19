@@ -1,0 +1,9 @@
+﻿RecursoID;Nome;Grupo;Descricao
+1;Controle de Exportação Zero;Controle Solar;Limitação ativa da potência gerada de acordo com o consumo instantâneo no PAC.
+2;Detecção de Arco Elétrico (AFCI);Segurança;Interrupção ultra-rápida do circuito em caso de faíscamento por algoritmo neural.
+3;Rastreamento MPPT Múltiplo;Rendimento;Otimização de strings fotovoltaicas em diferentes orientações e inclinações.
+4;Protocolo Modbus RTU / TCP;Comunicação;Padrão aberto industrial para telemetria e comando remoto.
+5;Proteção Anti-Ilhamento Ativa;Proteção de Rede;Desconexão automática e segura do inversor quando há falta da concessionária.
+6;Funções ANSI Integradas (50/51/67);Proteção MT;Disparo temporizado e direcional de sobrecorrente em subestações.
+7;CLP Integrado (SoftPLC);Automação;Capacidade de executar rotinas lógicas no próprio drive sem CLP externo.
+8;Tecnologia de Cartucho Plugável;Manutenção;Substituição a quente do módulo de proteção sem desligar a barra de alimentação.

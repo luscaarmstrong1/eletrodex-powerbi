@@ -1,0 +1,170 @@
+table Medidas
+	lineageTag: med-001
+
+	measure 'Total Equipamentos' = COUNTROWS(DimEquipamentos)
+		formatString: #,##0
+		lineageTag: med-tot-eq
+
+	measure 'Total Fabricantes' = DISTINCTCOUNT(DimFabricantes[FabricanteID])
+		formatString: #,##0
+		lineageTag: med-tot-fab
+
+	measure 'Total Categorias' = COUNTROWS(DimCategorias)
+		formatString: #,##0
+		lineageTag: med-tot-cat
+
+	measure 'Total Documentos Oficiais' = COUNTROWS(DimFontes)
+		formatString: #,##0
+		lineageTag: med-tot-doc
+
+	measure 'Fichas 100% Verificadas' = 
+		CALCULATE(
+			COUNTROWS(DimEquipamentos),
+			DimEquipamentos[StatusValidacao] = "Verificado 100%"
+		)
+		formatString: #,##0
+		lineageTag: med-fic-ver
+
+	measure '% Cobertura Documental' = 
+		DIVIDE([Fichas 100% Verificadas], [Total Equipamentos], 0)
+		formatString: 0.0%
+		lineageTag: med-cob-doc
+
+	measure 'Total Especificações Cadastradas' = COUNTROWS(FatoEspecificacoes)
+		formatString: #,##0
+		lineageTag: med-tot-esp
+
+	measure 'Equipamento Selecionado Nome' = 
+		SELECTEDVALUE(
+			DimEquipamentos[Modelo],
+			"Nenhum equipamento selecionado"
+		)
+		lineageTag: med-sel-nom
+
+	measure 'Equipamento Selecionado Codigo' = 
+		SELECTEDVALUE(
+			DimEquipamentos[CodigoEletrodex],
+			"EDX-0000"
+		)
+		lineageTag: med-sel-cod
+
+	measure 'Equipamento Selecionado Fabricante' = 
+		CALCULATE(
+			SELECTEDVALUE(DimFabricantes[Nome]),
+			CROSSFILTER(DimEquipamentos[FabricanteID], DimFabricantes[FabricanteID], Both)
+		)
+		lineageTag: med-sel-fab
+
+	measure 'Comparador Equipamento A ID' = 
+		SELECTEDVALUE(AuxEquipamentoA[EquipamentoID_A], 1)
+		formatString: 0
+		lineageTag: med-cmp-a-id
+
+	measure 'Comparador Equipamento B ID' = 
+		SELECTEDVALUE(AuxEquipamentoB[EquipamentoID_B], 2)
+		formatString: 0
+		lineageTag: med-cmp-b-id
+
+	measure 'Comparador Equipamento A Nome' = 
+		LOOKUPVALUE(
+			DimEquipamentos[Modelo],
+			DimEquipamentos[EquipamentoID],
+			[Comparador Equipamento A ID]
+		)
+		lineageTag: med-cmp-a-nom
+
+	measure 'Comparador Equipamento B Nome' = 
+		LOOKUPVALUE(
+			DimEquipamentos[Modelo],
+			DimEquipamentos[EquipamentoID],
+			[Comparador Equipamento B ID]
+		)
+		lineageTag: med-cmp-b-nom
+
+	measure 'Comparador Valor Numérico A' = 
+		VAR EqA = [Comparador Equipamento A ID]
+		VAR ParID = SELECTEDVALUE(DimParametros[ParametroID])
+		RETURN
+			CALCULATE(
+				MAX(FatoEspecificacoes[ValorNormalizado]),
+				FatoEspecificacoes[EquipamentoID] = EqA,
+				FatoEspecificacoes[ParametroID] = ParID,
+				REMOVEFILTERS(DimEquipamentos)
+			)
+		formatString: #,##0.00
+		lineageTag: med-cmp-vnum-a
+
+	measure 'Comparador Valor Numérico B' = 
+		VAR EqB = [Comparador Equipamento B ID]
+		VAR ParID = SELECTEDVALUE(DimParametros[ParametroID])
+		RETURN
+			CALCULATE(
+				MAX(FatoEspecificacoes[ValorNormalizado]),
+				FatoEspecificacoes[EquipamentoID] = EqB,
+				FatoEspecificacoes[ParametroID] = ParID,
+				REMOVEFILTERS(DimEquipamentos)
+			)
+		formatString: #,##0.00
+		lineageTag: med-cmp-vnum-b
+
+	measure 'Comparador Diferença Absoluta' = 
+		IF(
+			ISBLANK([Comparador Valor Numérico A]) || ISBLANK([Comparador Valor Numérico B]),
+			BLANK(),
+			[Comparador Valor Numérico A] - [Comparador Valor Numérico B]
+		)
+		formatString: +#,##0.00;-#,##0.00;0.00
+		lineageTag: med-cmp-dif-abs
+
+	measure 'Comparador Diferença Percentual' = 
+		IF(
+			ISBLANK([Comparador Valor Numérico A]) || ISBLANK([Comparador Valor Numérico B]) || [Comparador Valor Numérico B] = 0,
+			BLANK(),
+			DIVIDE([Comparador Valor Numérico A] - [Comparador Valor Numérico B], [Comparador Valor Numérico B])
+		)
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: med-cmp-dif-pct
+
+	measure 'Comparador Valor Texto A' = 
+		VAR EqA = [Comparador Equipamento A ID]
+		VAR ParID = SELECTEDVALUE(DimParametros[ParametroID])
+		RETURN
+			CALCULATE(
+				MAX(FatoEspecificacoes[ValorTexto]),
+				FatoEspecificacoes[EquipamentoID] = EqA,
+				FatoEspecificacoes[ParametroID] = ParID,
+				REMOVEFILTERS(DimEquipamentos)
+			)
+		lineageTag: med-cmp-vtxt-a
+
+	measure 'Comparador Valor Texto B' = 
+		VAR EqB = [Comparador Equipamento B ID]
+		VAR ParID = SELECTEDVALUE(DimParametros[ParametroID])
+		RETURN
+			CALCULATE(
+				MAX(FatoEspecificacoes[ValorTexto]),
+				FatoEspecificacoes[EquipamentoID] = EqB,
+				FatoEspecificacoes[ParametroID] = ParID,
+				REMOVEFILTERS(DimEquipamentos)
+			)
+		lineageTag: med-cmp-vtxt-b
+
+	measure 'Status Conformidade Técnica' = 
+		IF(
+			[Fichas 100% Verificadas] == [Total Equipamentos],
+			"Auditoria em Conformidade Estrita (100% Verificado)",
+			"Em processo de validação de fontes"
+		)
+		lineageTag: med-st-conf
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: med-col-ph
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+	partition Medidas = calculated
+		mode: import
+		source = Row("Value", "Tabela de Medidas Central Eletrodex")

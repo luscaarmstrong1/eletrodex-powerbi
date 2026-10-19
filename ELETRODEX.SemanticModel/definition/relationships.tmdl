@@ -1,0 +1,39 @@
+relationship rel_eq_fab
+	fromColumn: DimEquipamentos.FabricanteID
+	toColumn: DimFabricantes.FabricanteID
+
+relationship rel_eq_cat
+	fromColumn: DimEquipamentos.CategoriaID
+	toColumn: DimCategorias.CategoriaID
+
+relationship rel_esp_eq
+	fromColumn: FatoEspecificacoes.EquipamentoID
+	toColumn: DimEquipamentos.EquipamentoID
+
+relationship rel_esp_par
+	fromColumn: FatoEspecificacoes.ParametroID
+	toColumn: DimParametros.ParametroID
+
+relationship rel_esp_fon
+	fromColumn: FatoEspecificacoes.FonteID
+	toColumn: DimFontes.FonteID
+
+relationship rel_ponte_apl_eq
+	fromColumn: PonteEquipamentoAplicacao.EquipamentoID
+	toColumn: DimEquipamentos.EquipamentoID
+
+relationship rel_ponte_apl_apl
+	fromColumn: PonteEquipamentoAplicacao.AplicacaoID
+	toColumn: DimAplicacoes.AplicacaoID
+
+relationship rel_ponte_rec_eq
+	fromColumn: PonteEquipamentoRecurso.EquipamentoID
+	toColumn: DimEquipamentos.EquipamentoID
+
+relationship rel_ponte_rec_rec
+	fromColumn: PonteEquipamentoRecurso.RecursoID
+	toColumn: DimRecursos.RecursoID
+
+relationship rel_ponte_rec_fon
+	fromColumn: PonteEquipamentoRecurso.FonteID
+	toColumn: DimFontes.FonteID

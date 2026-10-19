@@ -1,0 +1,38 @@
+table DimRecursos
+	lineageTag: rec-001
+
+	column RecursoID
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: rec-col-id
+		summarizeBy: none
+		sourceColumn: RecursoID
+
+	column Nome
+		dataType: string
+		lineageTag: rec-col-nom
+		summarizeBy: none
+		sourceColumn: Nome
+
+	column Grupo
+		dataType: string
+		lineageTag: rec-col-grp
+		summarizeBy: none
+		sourceColumn: Grupo
+
+	column Descricao
+		dataType: string
+		lineageTag: rec-col-des
+		summarizeBy: none
+		sourceColumn: Descricao
+
+	partition DimRecursos = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "recursos.csv"),[Delimiter=";", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"RecursoID", Int64.Type}, {"Nome", type text}, {"Grupo", type text}, {"Descricao", type text}})
+			in
+				Tipos

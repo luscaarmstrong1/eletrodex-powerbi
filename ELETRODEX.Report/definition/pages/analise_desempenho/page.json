@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "name": "analise_desempenho",
+  "displayName": "05 - Análise de Desempenho",
+  "displayOption": "FitToPage",
+  "width": 1280,
+  "height": 720,
+  "visuals": [
+    {
+      "id": "slicer_cat_perf",
+      "type": "slicer",
+      "field": "DimCategorias[Nome]",
+      "position": {
+        "x": 20,
+        "y": 20,
+        "width": 260,
+        "height": 200
+      }
+    },
+    {
+      "id": "bar_potencias",
+      "type": "barChart",
+      "category": "DimEquipamentos[Modelo]",
+      "measure": "MAX(FatoEspecificacoes[ValorNormalizado])",
+      "position": {
+        "x": 300,
+        "y": 20,
+        "width": 960,
+        "height": 340
+      }
+    },
+    {
+      "id": "scatter_eficiencia_potencia",
+      "type": "scatterChart",
+      "x": "Potência (kW)",
+      "y": "Eficiência (%)",
+      "position": {
+        "x": 300,
+        "y": 380,
+        "width": 960,
+        "height": 300
+      }
+    }
+  ]
+}

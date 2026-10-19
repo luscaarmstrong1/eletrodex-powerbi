@@ -1,0 +1,32 @@
+table DimAplicacoes
+	lineageTag: apl-001
+
+	column AplicacaoID
+		dataType: int64
+		isKey
+		formatString: 0
+		lineageTag: apl-col-id
+		summarizeBy: none
+		sourceColumn: AplicacaoID
+
+	column Nome
+		dataType: string
+		lineageTag: apl-col-nom
+		summarizeBy: none
+		sourceColumn: Nome
+
+	column Descricao
+		dataType: string
+		lineageTag: apl-col-des
+		summarizeBy: none
+		sourceColumn: Descricao
+
+	partition DimAplicacoes = m
+		mode: import
+		source =
+			let
+				Fonte = Csv.Document(File.Contents(CaminhoDados & "aplicacoes.csv"),[Delimiter=";", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				Tipos = Table.TransformColumnTypes(Cabecalhos,{{"AplicacaoID", Int64.Type}, {"Nome", type text}, {"Descricao", type text}})
+			in
+				Tipos

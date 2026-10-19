@@ -1,0 +1,9 @@
+﻿CategoriaID;Nome;Descricao;Cor;Icone;OrdemExibicao
+1;Inversores Fotovoltaicos;Conversão CC/CA para geração solar com rastreamento MPPT e injeção na rede.;#00B8FF;SolarPower;1
+2;Microinversores;Inversores modulares instalados por painel ou pares com MPPT independente a nível de módulo.;#38E8FF;Bolt;2
+3;Transformadores;Transformação e compatibilização de níveis de tensão e isolação galvânica.;#FFC857;Transform;3
+4;Disjuntores;Manobra e proteção contra sobrecorrentes, curtos-circuitos e falhas elétricas.;#FF5C5C;Shield;4
+5;Relés de Proteção;Dispositivos numéricos com funções ANSI para supervisão e desarme inteligente de subestações.;#8B5CF6;Security;5
+6;Controladores de Energia & Smart Meters;Supervisão de fluxo de potência, balanço energético e controle dinâmico de injeção.;#28E6A0;Speed;6
+7;Inversores de Frequência;Acionamento e variação contínua de velocidade e torque de motores elétricos trifásicos.;#6366F1;Tune;7
+8;Dispositivos de Proteção contra Surtos (DPS);Drenagem de sobretensões transitórias induzidas por descargas atmosféricas ou manobras.;#FFA726;FlashOn;8

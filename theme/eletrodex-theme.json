@@ -1,0 +1,67 @@
+{
+  "name": "Eletrodex Dark Tech",
+  "dataColors": [
+    "#00B8FF",
+    "#38E8FF",
+    "#28E6A0",
+    "#FFC857",
+    "#8B5CF6",
+    "#FF5C5C",
+    "#00E5FF",
+    "#6366F1"
+  ],
+  "background": "#080F1C",
+  "foreground": "#111C2E",
+  "tableAccent": "#00B8FF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#111C2E" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#1E324D" } },
+            "radius": 8
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#000000" } },
+            "transparency": 70,
+            "position": "Outer"
+          }
+        ],
+        "title": [
+          {
+            "fontColor": { "solid": { "color": "#F4F8FF" } },
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 12
+          }
+        ],
+        "subTitle": [
+          {
+            "fontColor": { "solid": { "color": "#9FB2CA" } },
+            "fontFamily": "Segoe UI",
+            "fontSize": 9
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#080F1C" } },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}
